@@ -1,11 +1,20 @@
-﻿<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://tempuri.org/XMLSchema.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/XMLSchema.xsd"
+    xmlns:mstns="http://tempuri.org/XMLSchema.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="nastaveni-klient">
     <xs:annotation>
-      <xs:documentation>Odkaz na github: https://github.com/marekchobodides/semestralni_projekt Uvodní nastavení celého klienta před přihlášením do aplikace</xs:documentation>
+      <xs:documentation>Odkaz na github: https://github.com/marekchobodides/semestralni_projekt</xs:documentation>
     </xs:annotation>
     <xs:complexType>
       <xs:sequence>
-        <xs:element type="xs:string" name="charset"/>
+        <xs:element type="xs:string" name="charset">
+          <xs:annotation>
+            <xs:documentation>Uvodní nastavení celého klienta před přihlášením do aplikace</xs:documentation>
+          </xs:annotation>
+        </xs:element>
         <xs:element name="nastaveni-klientaBezPrihlaseni">
           <xs:complexType>
             <xs:sequence>

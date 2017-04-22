@@ -1,10 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="semestralka.xsl"?>
 <!-- Odkaz na github: https://github.com/marekchobodides/semestralni_projekt -->
-<nastaveni-klient xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="semestralka.xsd">
 
+<nastaveni-klient xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="semestralka.xsd">
   <!--Uvodní nastavení celého klienta před přihlášením do aplikace-->
-<nastaveni-klient>
  <charset>UTF-8</charset>
   <nastaveni-klientaBezPrihlaseni>
     <napoveda>
