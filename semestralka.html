@@ -1,0 +1,382 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Odkaz na github: https://github.com/marekchobodides/semestralni_projekt -->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="Author" content="Marek Chobodides">
+    <title>Dokumentace k Nastaveni-herniKlient</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <h3>Navigace:</h3>
+            <ul>
+                <li><a href="#uvod">Úvod</a></li>
+                <li><a href="#metodika">Metodika - Použité nástroje</a></li>
+                <li><a href="#popis">Popis elementů a atributů</a></li>
+                <li><a href="#transf">Popis transformace</a></li>
+                <li><a href="#zaver">Závěr</a></li>
+            </ul>
+            <hr />
+        </nav>
+        <main>
+            <section id="uvod">
+                <article>
+                    <header>
+                        <h2>Úvod</h2>
+                    </header>
+                    <p>
+                        Jako téma semestrálního projektu jsem si vybral nastavení herního klienta.
+                        Toto téma jsem si zvolil protože mi přišlo atraktivní, a myslím si že se stoupajícím zájmem o hry by herní klient po realizaci určitě našel využití.
+                    </p>
+                    <p>XML soubor slouží k obecné konfiguraci herní aplikace, ke sledování a měnění dat v herním klientovi potřeb hráče, a konfiguraci jednotlivých sekcí.</p>
+                </article>
+            </section>
+            <section id="metodika">
+                <article>
+                    <header>
+                        <h2>Metodika</h2>
+                    </header>
+                    <h3>Využité programy</h3>
+                    <p>
+                        Pro tvorbu tohoto projektu jsem použil programy <a href="https://www.sublimetext.com/">Sublime Text</a>, <a href="https://www.visualstudio.com/">Visual Studio</a>,
+                        a prohlížeče <a href="https://www.mozilla.org/cs/firefox/new/">Mozilla Firefox</a> a <a href="https://www.google.com/chrome/">Google Chrome</a>.
+                    </p>
+                    <h3>Využité webové stránky</h3>
+                    <p>
+                        Většinu informací jsem našel na stránkách <a href="https://www.w3schools.com/">W3Schools</a>, validaci jsem provedl přes
+                        <a href="https://validator.w3.org/">oficální validátor W3</a>
+                    </p>
+                </article>
+            </section>
+            <section id="popis">
+                <article>
+                    <header>
+                        <h2>Popis elementů a atributů</h2>
+                    </header>
+                    <h3>Použité elementy</h3>
+                    <table border="1" id="elementy" title="Tabulka elementů">
+                        <tr>
+                            <td>Název elementu</td>
+                            <td>Popis elementu</td>
+                            <td>Schématické omezení</td>
+                        </tr>
+                        <tr>
+                            <td>nastaveni-klient</td>
+                            <td>Obaluje veškerá nastavení</td>
+                            <td>Bez omezení</td>
+                        </tr>
+                        <tr>
+                            <td>charset</td>
+                            <td>Určuje v jakém charsetu bude parsován text v aplikaci</td>
+                            <td>utf-8, utf-7, windows-1258, iso-885</td>
+                        </tr>
+                        <tr>
+                            <td>nastaveni-klientaBezPrihlaseni</td>
+                            <td>Obaluje nastavení, která jsou potřebná pro úvodní nastavení</td>
+                            <td>Bez omezení</td>
+                        </tr>
+                        <tr>
+                            <td>napoveda</td>
+                            <td>Umožnuje uživateli zjistit potřebné informace</td>
+                            <td>Novinky, Rady, Tipy, Triky</td>
+                        </tr>
+                        <tr>
+                            <td>oprava</td>
+                            <td>Umožní jednorázovou kontrolu a následnou opravu chyb klienta</td>
+                            <td>0,1</td>
+                        </tr>
+                        <tr>
+                            <td>hracskaPodpora</td>
+                            <td>Zda se chce uživatel zůčastnit podpory hry ve vývoji</td>
+                            <td>0,1</td>
+                        </tr>
+                        <tr>
+                            <td>ulozitLogy</td>
+                            <td>Umožňuje ukládání logů hry pro osobní využití</td>
+                            <td>0,1</td>
+                        </tr>
+                        <tr>
+                            <td>informace</td>
+                            <td>Obsahuje pouze úvodní info o klieotvi</td>
+                            <td>Minimálně 10 znaků, maximálně 150 znaků</td>
+                        </tr>
+                        <tr>
+                            <td>nastaveniP2P</td>
+                            <td>Zda chce aplikaci spustit v režimu P2P</td>
+                            <td>0, 1</td>
+                        </tr>
+                        <tr>
+                            <td>hlasitostEfektu</td>
+                            <td>Určuje velikost nastavení hlasitosti efektů herního klienta</td>
+                            <td>0, 1, 2, 3 ....99, 100</td>
+                        </tr>
+                        <tr>
+                            <td>vyberRegionu</td>
+                            <td>Určuje do jaké herní oblasti hráč spadá</td>
+                            <td>Anglie, Cesko, Nemecko</td>
+                        </tr>
+                        <tr>
+                            <td>jazyk</td>
+                            <td>Určuje jaký jazyk bude aplikace používat</td>
+                            <td>CZ, ENG, SPJ</td>
+                        </tr>
+                        <tr>
+                            <td>PamatovatJmeno</td>
+                            <td>Určuje zda si klient má pamatovat přihlašovací údaje</td>
+                            <td>0, 1</td>
+                        </tr>
+                        <tr>
+                            <td>VypnoutHudbuPriPrihlasovani</td>
+                            <td>Určuje zda v aplikaci má být slyšet hudba</td>
+                            <td>0, 1</td>
+                        </tr>
+                        <tr>
+                            <td>VypnoutAnimace</td>
+                            <td>Určuje zda v aplikaci mají být spouštěny animace</td>
+                            <td>0, 1</td>
+                        </tr>
+                        <tr>
+                            <td>nastaveni-klientaPoPrihlaseni</td>
+                            <td>Obsahuje nastavení, která jsou k dispozici přímo v profilu hráče po přihlášení</td>
+                            <td>Bez omezení</td>
+                        </tr>
+                        <tr>
+                            <td>FiltrSprostychSlov</td>
+                            <td>Určuje zda v aplikaci budou vidět sprostá slova od jiných hráčů</td>
+                            <td>0, 1</td>
+                        </tr>
+                        <tr>
+                            <td>PrihlaseniPratel</td>
+                            <td>Určuje zda v aplikaci klienta budou viděny oznámení o jejeho spoluhráčích/přátelích</td>
+                            <td>0, 1</td>
+                        </tr>
+                        <tr>
+                            <td>hlasitostEfektu</td>
+                            <td>Určuje velikost nastavení hlasitosti efektů ve hře</td>
+                            <td>0, 1, 2, 3 ....99, 100</td>
+                        </tr>
+                        <tr>
+                            <td>efekty</td>
+                            <td>Určuje zda budou spuštěny efekty ve hře</td>
+                            <td>0, 1</td>
+                        </tr>
+                        <tr>
+                            <td>hlasitostHudby</td>
+                            <td>Určuje velikost nastavení hlasitosti efektů ve hře</td>
+                            <td>0, 1, 2, 3 ....99, 100</td>
+                        </tr>
+                        <tr>
+                            <td>hudba</td>
+                            <td>Určuje zda bude spuštěna hudba ve hře</td>
+                            <td>0, 1</td>
+                        </tr>
+                        <tr>
+                            <td>animace</td>
+                            <td>Umožňuje spouštění animací postav ve hře</td>
+                            <td>0, 1</td>
+                        </tr>
+                        <tr>
+                            <td>tipy</td>
+                            <td>Určuje zda hráč bude dostávat informace, rady a tipy</td>
+                            <td>0, 1</td>
+                        </tr>
+                        <tr>
+                            <td>oznameni</td>
+                            <td>Určuje zda hráč bude dostávat oznámení o novinkách</td>
+                            <td>0, 1</td>
+                        </tr>
+                        <tr>
+                            <td>oznameniEsport</td>
+                            <td>Určuje zda hráč bude dostávat oznámení o novinkách od herní skupiny Esport</td>
+                            <td>0, 1</td>
+                        </tr>
+                        <tr>
+                            <td>varovaniChatu</td>
+                            <td>Upozorňuje hráče, při kliknutí na odkaz v chatu nebo jiné...</td>
+                            <td>0, 1</td>
+                        </tr>
+                        <tr>
+                            <td>NSampion</td>
+                            <td>Ukazuje na základě statistik nejhranější hráčovy šampióny a jejich rating</td>
+                            <td>Elise, Khazix, Jax, Zax, Lux</td>
+                        </tr>
+                        <tr>
+                            <td>PSampion</td>
+                            <td>kazuje na základě statistik úrovně hráčových šampiónů a jejich dosavadní úspěchy</td>
+                            <td>Elise, Khazix, Jax, Zax, Lux</td>
+                        </tr>
+                        <tr>
+                            <td>sampioni</td>
+                            <td>Určuje kolik šampiónů hráč vlastní a kolik je možno celkově mít</td>
+                            <td>Elis, Jax, Lux, Rumble, </td>
+                        </tr>
+                        <tr>
+                            <td>sampioni-omezeni</td>
+                            <td>Maximální množství šampiónů, které hráč může vlastnit (které hra vůbec nabízí)</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>hodnoceny</td>
+                            <td>Určuje v které sezóně se nachází a ze kterých jsou bráné následující údaje jednotlivých kategorií</td>
+                            <td>Bez podmínky</td>
+                        </tr>
+                        <tr>
+                            <td>solo</td>
+                            <td>Určuje počet her v herní kategorii, kde hraje hráč pouze sám</td>
+                            <td>1, 2, 3 ... do nekončna</td>
+                        </tr>
+                        <tr>
+                            <td>trojky</td>
+                            <td>Určuje počet her v herní kategorii, kde hraje hráč ve dvou</td>
+                            <td>1, 2, 3 ... do nekončna</td>
+                        </tr>
+                        <tr>
+                            <td>petky</td>
+                            <td>Určuje počet her v herní kategorii, kde hraje hráč v teamu</td>
+                            <td>int omezení</td>
+                        </tr>
+                        <tr>
+                            <td>vyhry</td>
+                            <td>Určuje počet her hteré hráč odehrál v normálních hrách</td>
+                            <td>int omezení</td>
+                        </tr>
+                        <tr>
+                            <td>uspechy</td>
+                            <td>Určuje počet objektů hteré hráč získal v normálních hrách</td>
+                            <td>int omezení</td>
+                        </tr>
+                        <tr>
+                            <td>minonci</td>
+                            <td>Určuje počet minionů hteré hráč zabil v normálních hrách</td>
+                            <td>int omezení</td>
+                        </tr>
+                        <tr>
+                            <td>Avyhry</td>
+                            <td>Určuje počet her typu ARAM hteré hráč vyhrál</td>
+                            <td>int omezení</td>
+                        </tr>
+                        <tr>
+                            <td>Auspechy</td>
+                            <td>Určuje počet her typu ARAM hteré hráč vyhrál</td>
+                            <td>int omezení</td>
+                        </tr>
+                        <tr>
+                            <td>Aveze</td>
+                            <td>Určuje počet her typu ARAM hteré hráč vyhrál</td>
+                            <td>int omezení</td>
+                        </tr>
+                        <tr>
+                            <td>poradi</td>
+                            <td>Určuje pořadí ve kterém jsou jednotlivé seznamy run hráče</td>
+                            <td>int omezení</td>
+                        </tr>
+                        <tr>
+                            <td>atributy</td>
+                            <td>Určuje množstrví které hráč má na dané záložce run v jednotlivých typech</td>
+                            <td>double omezení</td>
+                        </tr>
+                        <tr>
+                            <td>specialiazace</td>
+                            <td>Určuje speciální talenty, které hráč může mít v třech různých kategoriích</td>
+                            <td>double omezení</td>
+                        </tr>
+                        <tr>
+                            <td>typy</td>
+                            <td>Určuje jednotlive zaměření talentů které hráč má</td>
+                            <td>int omezení</td>
+                        </tr>
+                        <tr>
+                            <td>kouzla</td>
+                            <td>Určuje speciální dodatková kouzla, která hráč může mít </td>
+                            <td>Skok, Vycerpat, Vylecit, Bystrost, Ocista, Teleport, Vznitit </td>
+                        </tr>
+                        <tr>
+                            <td>ikona</td>
+                            <td>Určuje text který si hráč chce dát na svůj úvodní obrázek profilu</td>
+                            <td>string omezeni</td>
+                        </tr>
+
+                    </table>
+                    <h3>Použité atributy</h3>
+                    <table border="1" id="atributy" title="Tabulka atributů">
+                        <tr>
+                            <td>Název atributu</td>
+                            <td>Popis atributu</td>
+                        </tr>
+                        <tr>
+                            <td>Oblast</td>
+                            <td>Určuje oblast herní aglomerace</td>
+                        </tr>
+                        <tr>
+                            <td>Cast</td>
+                            <td>Určuje hráče daných částí</td>
+                        </tr>
+                        <tr>
+                            <td>ChampID</td>
+                            <td>Určuje id daných šampiónů</td>
+                        </tr>
+                        <tr>
+                            <td>omezeniID</td>
+                            <td>Určuje omezení aktuálního maximálního množsví šampionů</td>
+                        </tr>
+                        <tr>
+                            <td>sezona</td>
+                            <td>Určuje číslo sez=ny která právě probíhá</td>
+                        </tr>
+                        <tr>
+                            <td>liga</td>
+                            <td>Určuje úroveň ligy, ve které hráč v dané kategorii je </td>
+                        </tr>
+                        <tr>
+                            <td>barva</td>
+                            <td>Určuje barvu jednotlivých run</td>
+                        </tr>
+                        <tr>
+                            <td>vlasniID</td>
+                            <td>Určuje vlastní identifikátor hráče kterým si definoval jedntolivé talenty</td>
+                        </tr>
+                        <tr>
+                            <td>KouzloID</td>
+                            <td>Určuje identifikátor kouzla které hráč zvolil jako defaultní</td>
+                        </tr>
+                        <tr>
+                            <td>Sablona</td>
+                            <td>Určuje šSablonu kterou zvolil pro svoje logo</td>
+                        </tr>
+                    </table>
+                </article>
+            </section>
+            <section id="transf">
+                <article>
+                    <header>
+                        <h2>Popis transformace</h2>
+                    </header>
+                    <p>
+                        Transformace pomocí cyklu <code>for-each</code> vybere, a pomocí <strong>JSON</strong> odešle informace o všech nastavených runách hráče, kteří mají míru  rovnu
+                        dvěmi, všechny informace seřadí podle poradi run, a obsahuje test na zjištění zda údaj byl poslední, a případné doplnění čárky pro správnou syntaxi.
+                    </p>
+                </article>
+            </section>
+            <section id="zaver">
+                <article>
+                    <header>
+                        <h2>Závěr</h2>
+                    </header>
+                    <p>
+                        Při tvorbě této práce jsem si poprvé v životě vyzkoušel pracovat s jazykem XML, který v budoucnu určitě využiji.
+                        Při větším rozsahu práce by bylo třeba udělat konkrétné omezení na všechny druhy elementů, aby byla aplikace správně zabezpečená a také konkrétně předělat
+                        logiku, jelikož aplikace by nesměla mít citlivé údaje ve formě XML.
+                    </p>
+                </article>
+            </section>
+        </main>
+        <footer>
+            <p>Autor: <strong>Marek Chobodides, xchom015</strong> | Česká Zemědělská univerzita Praha, dne 22.4.2017</p>
+        </footer>
+    </div>
+</body>
+</html>

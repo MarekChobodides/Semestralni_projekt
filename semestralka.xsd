@@ -1,0 +1,369 @@
+﻿<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="nastaveni-klient">
+    <xs:annotation>
+      <xs:documentation>Odkaz na github: https://github.com/marekchobodides/semestralni_projekt Uvodní nastavení celého klienta před přihlášením do aplikace</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="charset"/>
+        <xs:element name="nastaveni-klientaBezPrihlaseni">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="napoveda">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="oprava"/>
+                    <xs:element type="xs:byte" name="hracskaPodpora"/>
+                    <xs:element type="xs:byte" name="UlozitLogy"/>
+                    <xs:element type="xs:string" name="Informace"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:byte" name="nastaveniP2P"/>
+              <xs:element type="xs:byte" name="hlasitostEfektu"/>
+              <xs:element name="region">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="vyberRegionu">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="Oblast"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="jazyk">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="Cast"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:byte" name="PamatovatJmeno"/>
+              <xs:element type="xs:byte" name="VypnoutHudbuPriPrihlasovani"/>
+              <xs:element type="xs:byte" name="VypnoutAnimace"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="nastaveni-klientaPoPrihlaseni">
+          <xs:annotation>
+            <xs:documentation>Uvodní nastavení celého klienta po přihlášení do aplikace</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nastaveniChatu">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="FiltrSprostychSlov"/>
+                    <xs:element type="xs:byte" name="PrihlaseniPratel"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="nastaveniZvuku">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="hlasitostEfektu"/>
+                    <xs:element type="xs:byte" name="efekty"/>
+                    <xs:element type="xs:byte" name="hlasitostHudby"/>
+                    <xs:element type="xs:byte" name="hudba"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="obecneNastaveni">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="animace"/>
+                    <xs:element type="xs:byte" name="tipy"/>
+                    <xs:element type="xs:byte" name="oznameni"/>
+                    <xs:element type="xs:byte" name="oznameniEsport"/>
+                    <xs:element type="xs:byte" name="varovaniChatu"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="uzivatelskeNastaveni">
+                <xs:complexType mixed="true">
+                  <xs:sequence>
+                    <xs:element name="nejlepsiSampion">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="NSampion" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:byte" name="ChampID" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="postup">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="PSampion" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:byte" name="ChampID" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="sampioni">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:byte" name="pocetSampionu"/>
+                          <xs:element name="sampioni-omezeni">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:byte">
+                                  <xs:attribute type="xs:byte" name="omezeniID"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="sampion" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="jmeno"/>
+                                <xs:element type="xs:byte" name="uroven"/>
+                                <xs:element type="xs:short" name="bodu"/>
+                                <xs:element type="xs:byte" name="znamka"/>
+                                <xs:element name="detail">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="schopnosti">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element type="xs:string" name="passiv"/>
+                                            <xs:element type="xs:string" name="Q"/>
+                                            <xs:element type="xs:string" name="W"/>
+                                            <xs:element type="xs:string" name="E"/>
+                                            <xs:element type="xs:string" name="R"/>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element type="xs:string" name="pribeh"/>
+                                      <xs:element type="xs:string" name="tipy"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute type="xs:byte" name="id" use="optional"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="status">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="hodnoceny">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="solo">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:byte">
+                                        <xs:attribute type="xs:string" name="liga"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="trojky">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute type="xs:string" name="liga"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="petky">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:byte">
+                                        <xs:attribute type="xs:string" name="liga"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute type="xs:byte" name="sezona"/>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="klasicky">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:short" name="vyhry"/>
+                                <xs:element type="xs:short" name="uspechy"/>
+                                <xs:element type="xs:int" name="minonci"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="aram">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:short" name="Avyhry"/>
+                                <xs:element type="xs:float" name="Auspechy"/>
+                                <xs:element type="xs:short" name="Aveze"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="hodnoceni">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:byte" name="pratelsky"/>
+                          <xs:element type="xs:byte" name="pomocny"/>
+                          <xs:element type="xs:short" name="tymovy"/>
+                          <xs:element type="xs:byte" name="cestny"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="runy">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="pojmenovani" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType mixed="true">
+                              <xs:sequence>
+                                <xs:element type="xs:byte" name="poradi"/>
+                                <xs:element name="typ">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="znamky">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:byte">
+                                              <xs:attribute type="xs:string" name="barva" use="optional"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="peceti">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:byte">
+                                              <xs:attribute type="xs:string" name="barva" use="optional"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="glyfy">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:byte">
+                                              <xs:attribute type="xs:string" name="barva" use="optional"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="kvi9ntesence">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:byte">
+                                              <xs:attribute type="xs:string" name="barva" use="optional"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="atributy">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:string" name="brneni"/>
+                                      <xs:element type="xs:byte" name="odolnostMagii"/>
+                                      <xs:element type="xs:byte" name="silaSchopnosti"/>
+                                      <xs:element type="xs:byte" name="rychlostUtoku" minOccurs="0"/>
+                                      <xs:element type="xs:short" name="zdravi"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute type="xs:string" name="nazev" use="optional"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="specialiazace">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="pojmenivani" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType mixed="true">
+                              <xs:sequence>
+                                <xs:element type="xs:byte" name="poradi"/>
+                                <xs:element name="typy">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:byte" name="zurivost"/>
+                                      <xs:element type="xs:byte" name="lstivost"/>
+                                      <xs:element type="xs:byte" name="odhodlani"/>
+                                      <xs:element type="xs:byte" name="kDispozici"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute type="xs:byte" name="vlasniID" use="optional"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="kouzla">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="prvni">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:byte" name="KouzloID"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="druhy">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:byte" name="KouzloID"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ikona">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="Sablona"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

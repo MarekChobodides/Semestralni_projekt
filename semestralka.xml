@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="semestralka.xsl"?>
+<!-- Odkaz na github: https://github.com/marekchobodides/semestralni_projekt -->
+<nastaveni-klient xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="semestralka.xsd">
+
+  <!--Uvodní nastavení celého klienta před přihlášením do aplikace-->
+<nastaveni-klient>
+ <charset>UTF-8</charset>
+  <nastaveni-klientaBezPrihlaseni>
+    <napoveda>
+      <oprava>zahajit</oprava>
+      <hracskaPodpora>0</hracskaPodpora>
+      <UlozitLogy>0</UlozitLogy>
+      <Informace>Sklada se ze zakladni soucasti instalacniho balicku...</Informace>
+    </napoveda>
+    <nastaveniP2P>1</nastaveniP2P>
+    <hlasitostEfektu>20</hlasitostEfektu>
+    <region>
+      <vyberRegionu Oblast="EU">Anglie</vyberRegionu>
+      <jazyk Cast="Evropa">CZ</jazyk>
+    </region>
+    <PamatovatJmeno>1</PamatovatJmeno>
+    <VypnoutHudbuPriPrihlasovani>0</VypnoutHudbuPriPrihlasovani>
+    <VypnoutAnimace>1</VypnoutAnimace>
+  </nastaveni-klientaBezPrihlaseni>
+  <!--Uvodní nastavení celého klienta po přihlášení do aplikace-->
+  <nastaveni-klientaPoPrihlaseni>
+    <nastaveniChatu>
+      <FiltrSprostychSlov>1</FiltrSprostychSlov>
+      <PrihlaseniPratel>1</PrihlaseniPratel>
+    </nastaveniChatu>
+    <nastaveniZvuku>
+      <hlasitostEfektu>50</hlasitostEfektu>
+      <efekty>0</efekty>
+      <hlasitostHudby>40</hlasitostHudby>
+      <hudba>0</hudba>
+    </nastaveniZvuku>
+    <obecneNastaveni>
+      <animace>0</animace>
+      <tipy>0</tipy>
+      <oznameni>1</oznameni>
+      <oznameniEsport>0</oznameniEsport>
+      <varovaniChatu>1</varovaniChatu>
+    </obecneNastaveni>
+    <uzivatelskeNastaveni>
+      <nejlepsiSampion>
+        <NSampion ChampID="10">Elise</NSampion>
+        <NSampion ChampID="7">Zac</NSampion>
+        <NSampion ChampID="15">Jax</NSampion>
+      </nejlepsiSampion>qě+
+      <postup>
+        <PSampion ChampID="10">Elise</PSampion>
+        <PSampion ChampID="15">Jax</PSampion>
+        <PSampion ChampID="2">Lux</PSampion>
+      </postup>
+      <sampioni>
+        <pocetSampionu>5</pocetSampionu>
+        <sampioni-omezeni omezeniID="15">15</sampioni-omezeni>
+          <sampion id="0">
+            <jmeno>Akali</jmeno>
+            <uroven>1</uroven>
+            <bodu>332</bodu>
+            <znamka>0</znamka>
+            <detail>
+              <schopnosti>
+                <passiv>Dvojita kazen</passiv>
+                <Q>Znacka zabijaka</Q>
+                <W>Hav soumraku</W>
+                <E>Srpove seknuti</E>
+                <R>Tanes stinu</R>
+              </schopnosti>
+              <pribeh>Na lónských ostrovech existuje prastarý řád zasvědcený zachování rovnováhy...</pribeh>
+              <tipy>Akali je vynikající pro zabíjení slabších postav...</tipy>
+            </detail>
+          </sampion>
+          <sampion id="1">
+            <jmeno>Draven</jmeno>
+            <uroven>0</uroven>
+            <bodu>0</bodu>
+            <znamka>0</znamka>
+            <detail>
+              <schopnosti>
+                <passiv>Liga Dravena</passiv>
+                <Q>Roztocena sekera</Q>
+                <W>Naval krve</W>
+                <E>Uhni</E>
+                <R>Vyriva smrt</R>
+              </schopnosti>
+              <pribeh>Pro Draven narozdíl od jeho bratra Daria, bylo vítězství v bitbvě málo. Toužil po věhlasu...</pribeh>
+              <tipy>Kdyz se draven nepohybuje, dopadne Roztocena sekera pobliz jeho aktualni pozice...</tipy>
+            </detail>
+          </sampion>
+          <sampion id="2">
+            <jmeno>Ashe</jmeno>
+            <uroven>2</uroven>
+            <bodu>3903</bodu>
+            <znamka>0</znamka>
+            <detail>
+              <schopnosti>
+                <passiv>Ledova strela</passiv>
+                <Q>Hranicarske soustredeni</Q>
+                <W>Salva</W>
+                <E>Jestrabi strela</E>
+                <R>Kristalovy sip</R>
+              </schopnosti>
+              <pribeh>S kazdym sipem, ktery vystreli ze sveho, ledem ocarovaneho luku, Ashe ukazuje své dovesnoti...</pribeh>
+              <tipy>Ocarovany sip, se lepe strili po sveru pohybu nepratel...</tipy>
+            </detail>
+          </sampion>          
+      </sampioni>
+      <status>
+        <hodnoceny sezona="7">
+          <solo liga="zlata">7</solo>
+          <trojky liga="zadna"></trojky>
+          <petky liga="diamant">0</petky>
+        </hodnoceny>
+        <klasicky>
+          <vyhry>11019</vyhry>
+          <uspechy>32570</uspechy>
+          <minonci>247300</minonci>
+        </klasicky>
+        <aram>
+          <Avyhry>193</Avyhry>
+          <Auspechy>10694 </Auspechy>
+          <Aveze>175</Aveze>
+        </aram>
+      </status>
+      <hodnoceni>
+        <pratelsky>42</pratelsky>
+        <pomocny>30</pomocny>
+        <tymovy>241</tymovy>
+        <cestny>101</cestny>
+      </hodnoceni>
+      <runy>
+        <pojmenovani nazev="AD">AD
+          <poradi>1</poradi>
+          <typ>
+            <znamky barva="cervena">9</znamky>
+            <peceti barva="zluta">9</peceti>
+            <glyfy barva="modra">9</glyfy>
+            <kvi9ntesence barva="fialova">3</kvi9ntesence>
+          </typ>
+          <atributy>
+            <brneni>8,2</brneni>
+            <odolnostMagii>27</odolnostMagii>
+            <silaSchopnosti>15</silaSchopnosti>
+            <zdravi>216</zdravi>
+          </atributy>
+        </pojmenovani>
+        <pojmenovani nazev="AP">AP
+          <poradi>2</poradi>
+          <typ>
+            <znamky>15</znamky>
+            <peceti>6</peceti>
+            <glyfy>6</glyfy>
+            <kvi9ntesence>3</kvi9ntesence>
+          </typ>
+          <atributy>
+            <brneni>2</brneni>
+            <odolnostMagii>27</odolnostMagii>
+            <silaSchopnosti>30</silaSchopnosti>
+            <zdravi>110</zdravi>
+          </atributy>
+        </pojmenovani>
+        <pojmenovani nazev="AD">AD
+          <poradi>3</poradi>
+          <typ>
+            <znamky>9</znamky>
+            <peceti>9</peceti>
+            <glyfy>9</glyfy>
+            <kvi9ntesence>3</kvi9ntesence>
+          </typ>
+          <atributy>
+            <brneni>8,2</brneni>
+            <odolnostMagii>27</odolnostMagii>
+            <silaSchopnosti>15</silaSchopnosti>
+            <zdravi>216</zdravi>
+          </atributy>
+        </pojmenovani>
+        <pojmenovani nazev="Top">Top
+          <poradi>4</poradi>
+          <typ>
+            <znamky>10</znamky>
+            <peceti>10</peceti>
+            <glyfy>10</glyfy>
+            <kvi9ntesence>3</kvi9ntesence>
+          </typ>
+          <atributy>
+            <brneni>10</brneni>
+            <odolnostMagii>5</odolnostMagii>
+            <silaSchopnosti>10</silaSchopnosti>
+            <rychlostUtoku>10</rychlostUtoku>
+            <zdravi>300</zdravi>
+          </atributy>
+        </pojmenovani>
+        <pojmenovani nazev="Bot">Bot
+          <poradi>5</poradi>
+          <typ>
+            <znamky>9</znamky>
+            <peceti>9</peceti>
+            <glyfy>9</glyfy>
+            <kvi9ntesence>3</kvi9ntesence>
+          </typ>
+          <atributy>
+            <brneni>8,2</brneni>
+            <odolnostMagii>27</odolnostMagii>
+            <silaSchopnosti>15</silaSchopnosti>
+            <zdravi>216</zdravi>
+          </atributy>
+        </pojmenovani>
+        <pojmenovani nazev="Podpora">Podpora
+          <poradi>6</poradi>
+          <typ>
+            <znamky>14</znamky>
+            <peceti>5</peceti>
+            <glyfy>15</glyfy>
+            <kvi9ntesence>3</kvi9ntesence>
+          </typ>
+          <atributy>
+            <brneni>10</brneni>
+            <odolnostMagii>1</odolnostMagii>
+            <silaSchopnosti>25</silaSchopnosti>
+            <zdravi>170</zdravi>
+          </atributy>
+        </pojmenovani>
+      </runy>
+      <specialiazace>
+        <pojmenivani vlasniID="1">Utocne
+          <poradi>1</poradi>
+          <typy>
+            <zurivost>10</zurivost>
+            <lstivost>15</lstivost>
+            <odhodlani>4</odhodlani>
+            <kDispozici>0</kDispozici>
+          </typy>
+        </pojmenivani>
+        <pojmenivani vlasniID="2">AD utocne
+          <poradi>2</poradi>
+          <typy>
+            <zurivost>18</zurivost>
+            <lstivost>0</lstivost>
+            <odhodlani>12</odhodlani>
+            <kDispozici>0</kDispozici>
+          </typy>
+        </pojmenivani>
+        <pojmenivani vlasniID="3">Podpurne
+          <poradi>3</poradi>
+          <typy>
+            <zurivost>12</zurivost>
+            <lstivost>0</lstivost>
+            <odhodlani>18</odhodlani>
+            <kDispozici>0</kDispozici>
+          </typy>
+        </pojmenivani>
+        <pojmenivani vlasniID="4">Midovaci
+          <poradi>4</poradi>
+          <typy>
+            <zurivost>12</zurivost>
+            <lstivost>18</lstivost>
+            <odhodlani>0</odhodlani>
+            <kDispozici>0</kDispozici>
+          </typy>
+        </pojmenivani>
+        <pojmenivani vlasniID="5">AP Utocne
+          <poradi>5</poradi>
+          <typy>
+            <zurivost>18</zurivost>
+            <lstivost>12</lstivost>
+            <odhodlani>0</odhodlani>
+            <kDispozici>0</kDispozici>
+          </typy>
+        </pojmenivani>
+      </specialiazace>
+      <kouzla>
+        <prvni KouzloID="1">Skok</prvni>
+        <druhy KouzloID="2">Vycerpat</druhy>
+      </kouzla>
+      <ikona Sablona="Darksize">Meverick</ikona>
+    </uzivatelskeNastaveni>
+  </nastaveni-klientaPoPrihlaseni>
+</nastaveni-klient>
